@@ -1,15 +1,17 @@
-package com.sqt.concurrent.atomic;
+package com.sqt.concurrent.countexample;
 
+import com.sqt.concurrent.annoations.ThreadUnsafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.*;
 
-/**
+/** 模拟并发编程代码
  * @Description:
  * @author: ListenerSun(男, 未婚) 微信:810548252
  * @Date: Created in 2019-09-29 1:49
  */
 @Slf4j
+@ThreadUnsafe
 public class CountExample {
     /**
      * 请求总数
