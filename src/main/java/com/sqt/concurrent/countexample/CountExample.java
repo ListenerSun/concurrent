@@ -33,8 +33,10 @@ public class CountExample {
         for (int i = 0; i < clientTotal; i++) {
             executorService.execute(() -> {
                 try {
+                    //获取许可
                     semaphore.acquire();
                     add();
+                    //归还许可
                     semaphore.release();
                 } catch (InterruptedException e) {
                     log.error("exception", e);
@@ -42,6 +44,7 @@ public class CountExample {
                 countDownLatch.countDown();
             });
         }
+        //await()方法,计数为0时执行当前线程后面的方法
         countDownLatch.await();
         executorService.shutdown();
         log.info("count:{}",count);
