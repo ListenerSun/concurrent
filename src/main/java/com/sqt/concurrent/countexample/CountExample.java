@@ -43,6 +43,7 @@ public class CountExample {
                 }
                 countDownLatch.countDown();
             });
+            System.out.println();
         }
         //await()方法,计数为0时执行当前线程后面的方法
         countDownLatch.await();
