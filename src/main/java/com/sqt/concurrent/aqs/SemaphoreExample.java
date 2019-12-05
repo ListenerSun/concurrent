@@ -37,6 +37,8 @@ public class SemaphoreExample {
 
             });
         }
+        //关闭线程池
+        exec.shutdown();
     }
 
     private static void test(int threadNum) {
